@@ -10,7 +10,7 @@
 			<input type="email" name="correo">
 
 		<label>	Seleccionar Pelicula: </label>
-			<input type="text" name="titulo">
+			<%= select_tag(:Pelicula, options_for_select(@peliculas))%>
 
 		<input type="submit" value="Guardar">
 
@@ -27,7 +27,7 @@
 			<input type="email" name="correo">
 
 		<label>Seleccionar Serie: </label>
-			<input type="text" name="titulo">
+			<%= select_tag(:Serie, options_for_select(@series))%>
 
 		<input type="submit" value="Guardar">
 
