@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  users: one
+  entretenimientos: one
+  fecha: 2020-02-20
+
+two:
+  users: two
+  entretenimientos: two
+  fecha: 2020-02-20

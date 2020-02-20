@@ -1,0 +1,2 @@
+class Entretenimiento < ApplicationRecord
+end
