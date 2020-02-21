@@ -1,4 +1,4 @@
 class Rent < ApplicationRecord
-  belongs_to :users
-  belongs_to :entretenimientos
+  belongs_to :user
+  belongs_to :entretenimiento
 end

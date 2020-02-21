@@ -2,7 +2,7 @@
 
 <div>
 	<h2>Arrendar Película </h2>
-	<form method="get">
+	<form action= "arrendar/actualizar" method="get">
 		<label>Nombre y Apellido:</label>
 			<input type="text" name="nombre">
 		
@@ -10,7 +10,7 @@
 			<input type="email" name="correo">
 
 		<label>	Seleccionar Pelicula: </label>
-			<%= select_tag(:Pelicula, options_for_select(@peliculas))%>
+			<%= select_tag(:entretenimiento, options_for_select(@peliculas))%>
 
 		<input type="submit" value="Guardar">
 
@@ -19,7 +19,7 @@
 
 <div>
 	<h2>Arrendar Serie </h2>
-	<form method="get">
+	<form action= "arrendar/actualizar" method="get"  >
 		<label>Nombre y Apellido:</label>
 			<input type="text" name="nombre">
 		
@@ -27,9 +27,31 @@
 			<input type="email" name="correo">
 
 		<label>Seleccionar Serie: </label>
-			<%= select_tag(:Serie, options_for_select(@series))%>
+			<%= select_tag(:entretenimiento, options_for_select(@series))%>
 
 		<input type="submit" value="Guardar">
 
 	</form>
+</div>
+
+<div>
+	<h1>Películas y Series Arrendadas</h1>
+	<table cellpadding="10">
+		<tr>
+			<th>Nombre</th>
+			<th>Correo</th>
+			<th>Titulo</th>
+			<th>Tipo</th>
+			<th>Costo</th>
+		</tr>
+		<% @arrendados.each  do |actual| %>
+	  		<tr>
+	 	 		<th><%= actual.user.nombre %> </th>
+	 	 		<th> <%= actual.user.email %> </th>
+	 	 		<th><%= actual.entretenimiento.titulo %> </th>
+	 	 		<th><%= actual.entretenimiento.tipo %> </th>
+	 	 		<th><%= actual.entretenimiento.precio %> </th>
+	 		</tr>
+	<% end %>
+	</table>
 </div>

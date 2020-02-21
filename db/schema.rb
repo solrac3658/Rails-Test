@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 2020_02_20_181025) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "entretenimientos_id"
+    t.bigint "user_id"
+    t.bigint "entretenimiento_id"
     t.date "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["entretenimientos_id"], name: "index_rents_on_entretenimientos_id"
-    t.index ["users_id"], name: "index_rents_on_users_id"
+    t.index ["entretenimiento_id"], name: "index_rents_on_entretenimiento_id"
+    t.index ["user_id"], name: "index_rents_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +43,6 @@ ActiveRecord::Schema.define(version: 2020_02_20_181025) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "rents", "entretenimientos", column: "entretenimientos_id"
-  add_foreign_key "rents", "users", column: "users_id"
+  add_foreign_key "rents", "entretenimientos"
+  add_foreign_key "rents", "users"
 end
